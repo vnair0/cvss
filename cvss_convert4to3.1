@@ -40,9 +40,8 @@ with open(source_file, 'r') as source, open(destination_file, 'w') as destinatio
     User Interaction -- If UI:P or UI:A, then set UI:R
     Privileges Required -- also directly translate
     Scope -- A little tricky. Basically, we need to see if either CIA or vulnerable or subsequent system has non-N metrics. 
-    Impact Metrics -- In the event of two sets, pick the highest. Convert CIA to C / I / A. 
-        If there are more H values for one than the other, use that as the vector.
-        If the vectors match, or have the count of High impacts, use the vulnerable system for the CIA score in v3.1.
+    Impact Metrics -- In the event of two sets, pick the worst case output. For example, if VC=H and SC=L, set C=H.
+       
 
     Exploit maturity -- High equates to Attacked, roughly. Setting Functional to Attacked as well.
         PoC maps to v3.1. Unproven is also the same.
