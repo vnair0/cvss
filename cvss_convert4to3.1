@@ -1,21 +1,5 @@
 # A script with documented rules to generate a CVSS v3.1 vector string if a CVSS v4.0 is supplied. Based on https://github.com/nickleali/mycvss/blob/main/cvss_reverse.py, updated logic for Impact metrics to assume worst case 
 
-def count_impact_metrics(vector, metrics):
-    """
-    Checks a supplied CVSS vector for the presence of the supplied metrics.
-
-    Args:
-        vector: the CVSS vector string
-        metrics: the desired metrics to check
-    """
-    counts = 0
-
-    for metric in metrics:
-        counts = counts + vector.count(metric)
-    return counts
-
-
-
 # set the source and destination files
 source_file = "v4_vectors.txt"
 destination_file = "v3_vectors.txt"
